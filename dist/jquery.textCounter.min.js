@@ -1,0 +1,4 @@
+/*! textCounter.js - v1.0.0 - 2012-06-22
+* https://github.com/commadelimited/textCounter.js
+* Copyright (c) 2012 andy matthews; Licensed MIT, GPL */
+(function(a){a.fn.textCounter=function(b){return b=a.extend({},a.fn.textCounter.defaults,b),this.each(function(c,d){var e=a(d),f=a(b.target);e.html(b.count-f.text().length),a(b.target).keyup(function(a){var c=this.value.length;c<=b.count-b.alertAt?e.removeClass("tcAlert tcWarn"):c>b.count-b.alertAt&&c<b.count-b.warnAt?e.removeClass("tcAlert tcWarn").addClass("tcAlert"):c>=b.count-b.warnAt&&(e.removeClass("tcAlert tcWarn").addClass("tcWarn"),b.stopAtLimit&&(this.value=this.value.substring(0,b.count))),e.html(b.count-this.value.length)}).trigger("keyup")})},a.fn.textCounter.defaults={count:140,alertAt:20,warnAt:0,target:"#myTextarea",stopAtLimit:!1}})(jQuery)

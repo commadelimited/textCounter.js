@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+	<title>textCounter - a text countdown jQuery plugin</title>
+	<script src="libs/jquery/jquery.js" type="text/javascript"></script>
+	<!-- <link href="textCounter.css" rel="stylesheet" type="text/css" /> -->
+	<style>
+		.tcAlert { color: orange; }
+		.tcWarn { color: red; }
+		textarea {
+			width: 400px;
+			height: 60px;
+		}
+		span, label {
+			display: block;
+			width: 400px;
+			text-align: right;
+		}
+		label {
+			text-align: left;
+			font-weight: bold;
+		}
+	</style>
+	<script src="src/jquery.textCounter.js" type="text/javascript"></script>
+	<script>
+		$(function(){
+			$('#theCounter').textCounter();
+			$('#theCounter').textCounter({
+				target: '#myTextarea',
+				count: 70,
+				alertAt: 20,
+				warnAt: 10
+			});
+			$('#theCounter2').textCounter({
+				target: '#myTextarea2',
+				count: 30,
+				alertAt: 20,
+				warnAt: 10,
+				stopAtLimit: true
+			});
+		});
+	</script>
+</head>
+<body>
+
+	<h1>textCounter - a jQuery plugin</h1>
+	<p>
+		<a href="https://github.com/commadelimited/textCounter.js">Fork me on Github</a>
+	</p>
+	<p>
+		TextCounter is a jQuery plugin which provides a countdown of text in an input field. Inspired by the way Twitter counts down the remaining characters in a tweet, textCounter is a configurable jQuery plugin that easily allows anyone to add this same functionality. Written with best practices in mind, textCounter offers multiple character count ranges, custom coloration via CSS classes, and even the ability to prevent users from exceeding the character count limit. Let's see it in action.
+	</p>
+	<form>
+		<label for="myTextarea">70 character field</label>
+		<textarea id="myTextarea">Existing content</textarea>
+		<span id="theCounter"></span>
+		<br />
+		<label for="myTextarea2">30 character field, with character truncation</label>
+		<textarea id="myTextarea2"></textarea>
+		<span id="theCounter2"></span>
+	</form>
+	<p>
+		As soon as the page loads, textCounter initializes the container you wish to hold the count. It then references the target input field's length and compares it to your custom alert and warning levels. Setup is easy. At it's most basic, simply include jquery, the textCounter plugin, and tie it to your form elements.
+	</p>
+
+</body>
+</html> 

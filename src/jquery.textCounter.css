@@ -1,0 +1,15 @@
+.tcAlert { color: orange; }
+.tcWarn { color: red; }
+textarea {
+	width: 400px;
+	height: 60px;
+}
+span, label {
+	display: block;
+	width: 400px;
+	text-align: right;
+}
+label {
+	text-align: left;
+	font-weight: bold;
+}
