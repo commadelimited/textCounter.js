@@ -15,6 +15,11 @@
 
 			var $e = $(el);
 			var $target = $(o.target);
+			if ( typeof o.count === 'string' ) {
+				// Rather than a literal value given for count, use the specified attribute
+				// of the target element.
+				o.count = parseInt($target.attr(o.count));
+			}
 
 			// predefined count minus existing content
 			$e.html(o.count - $target.text().length);
