@@ -20,7 +20,8 @@ Clone the git repo - `git clone https://github.com/commadelimited/textCounter.js
 	$(function(){
 		$('#theCounter').textCounter({
 			target: '#myTextarea', // required: string
-			count: 70, // optional: integer [defaults 140]
+			count: 70, // optional: if string, specifies attribute of target to use as value
+			           //           if integer, specifies value. [defaults 140]
 			alertAt: 20, // optional: integer [defaults 20]
 			warnAt: 10, // optional: integer [defaults 0]
 			stopAtLimit: false // optional: defaults to false
