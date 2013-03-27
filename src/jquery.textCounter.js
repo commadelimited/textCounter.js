@@ -22,7 +22,7 @@
 			}
 
 			// predefined count minus existing content
-			$e.html(o.count - $target.text().length);
+			$e.html(o.count - $target.text().length + o.description);
 
 			$(o.target).keyup(function(e){
 				var cnt = this.value.length;
@@ -37,7 +37,7 @@
 					$e.removeClass('tcAlert tcWarn').addClass('tcWarn');
 					if (o.stopAtLimit) { this.value = this.value.substring(0, o.count); }
 				}
-				$e.html(o.count-this.value.length);
+				$e.html(o.count-this.value.length + o.description);
 			}).trigger('keyup');
 
 		});
@@ -49,7 +49,8 @@
 		alertAt: 20,
 		warnAt: 0,
 		target: '#myTextarea',
-		stopAtLimit: false
+		stopAtLimit: false,
+		description: ''
 	};
 
 }(jQuery));
