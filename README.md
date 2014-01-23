@@ -43,3 +43,7 @@ You are invited to contribute code and suggestions to this project. The more the
 ### Custom bits:
 
 MIT GPL
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/commadelimited/textcounter.js/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
