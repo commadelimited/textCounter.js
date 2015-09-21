@@ -37,7 +37,9 @@
 					$e.removeClass('tcAlert tcWarn').addClass('tcWarn');
 					if (o.stopAtLimit) { this.value = this.value.substring(0, o.count); }
 				}
-				$e.html(o.count-this.value.length + o.description);
+				//New Lines should be counted as two characters as the HTTP Spec insists -  http://stackoverflow.com/questions/10030921/chrome-counts-characters-wrong-in-textarea-with-maxlength-attribute
+				$e.html(o.count - this.value.replace(/\r(?!\n)|\n(?!\r)/g, "\r\n").length + o.description);
+
 			}).trigger('keyup');
 
 		});
